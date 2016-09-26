@@ -267,10 +267,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_mt6580
 PRODUCT_DEVICE := mt6580
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
-
 PRODUCT_PACKAGES += \
     librs_jni \
     com.android.future.usb.accessory
@@ -298,13 +294,8 @@ PRODUCT_PACKAGES_OVERRIDES += \
     gps.goldfish \
     lights.goldfish \
     power.goldfish \
-    ResurrectionOTA \
-    ResurrectionStats \
     sensors.goldfish \
     sensors.ranchu \
     vibrator.goldfish
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=8
-
-# Dalvik
-$(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
