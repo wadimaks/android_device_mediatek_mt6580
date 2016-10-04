@@ -4,6 +4,7 @@ import init.project.rc
 import init.xlog.rc
 import init.aee.rc
 import init.nvdata.rc
+import init.modem.rc
 
 # init.modem.rc must be the LAST rc file because vold.post_fs_data_done is set in it
 import init.modem.rc
@@ -14,6 +15,9 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
 on init
+
+	export LD_PRELOAD "libxlog.so"
+
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
 
@@ -722,6 +726,9 @@ on post-fs-data
 # -----------------------
 
 on boot
+
+    #needed for RIL
+    chmod 644 /proc/cmdline
 
     # xlog
     start xlogboot
