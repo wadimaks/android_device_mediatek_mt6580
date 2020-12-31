@@ -1,0 +1,14 @@
+[
+  {
+        "repository"   : "clownless/vendor_doogee_x20",
+        "target_path"  : "vendor/doogee/x20",
+        "branch"       : "master",
+        "remote"       : "github"
+  },
+  {
+        "repository"   : "clownless/kernel_doogee_x20",
+        "target_path"  : "kernel/doogee/x20",
+        "branch"       : "master",
+        "remote"       : "github"
+  },
+]
