@@ -4,16 +4,17 @@ This is a device tree for mediatek mt6580 ROW which is based on mt6580 SoC. Powe
 # Build
 
 * init
-  Sync CyanogenMod source:
+  Sync LINEAGE OS source:
 
-        # repo init -u git://github.com/ResurrectionRemix-mtk/platform_manifest.git -b marshmallow        
-        # repo sync -f --force-sync --no-clone-bundle
+        # repo init -u git://github.com/LineageOS/android.git -b cm-14.1        
+        # repo sync
 
 * full build
         
         # source build/envsetup.sh
-
-        # brunch rr_mt6580-userdebug
+        # breakfast x20
+        # croot
+        # brunch x20
 
 # Limitations
 

@@ -1,7 +1,7 @@
 # inherit from the proprietary version
--include vendor/mediatek/mt6580/BoardConfigVendor.mk
+-include vendor/doogee/x20/BoardConfigVendor.mk
 
-LOCAL_PATH := device/mediatek/mt6580
+LOCAL_PATH := device/doogee/x20
 
 USE_CAMERA_STUB := true
 TARGET_PROVIDES_INIT_RC := true
@@ -82,8 +82,8 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storag
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TW_NO_REBOOT_BOOTLOADER := true
-TARGET_RECOVERY_FSTAB := device/mediatek/mt6580/recovery/root/etc/recovery.fstab
-TARGET_RECOVERY_DEVICE_DIRS += device/mediatek/mt6580
+TARGET_RECOVERY_FSTAB := device/doogee/x20/recovery/root/etc/recovery.fstab
+TARGET_RECOVERY_DEVICE_DIRS += device/doogee/x20
 TW_THEME := portrait_hdpi
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness
@@ -150,7 +150,7 @@ TARGET_CPU_MEMCPY_OPT_DISABLE := true
 USE_MINIKIN := true
 
 # Selinux
-BOARD_SEPOLICY_DIRS += device/mediatek/mt6580/sepolicy
+BOARD_SEPOLICY_DIRS += device/doogee/x20/sepolicy
 
 # Hack for building without kernel sources
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)

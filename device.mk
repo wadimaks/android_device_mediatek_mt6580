@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2018-2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,11 +22,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 # Inherit vendor blobs
-$(call inherit-product-if-exists, vendor/mediatek/mt6580/mt6580-vendor.mk)
+$(call inherit-product-if-exists, vendor/doogee/x20/x20-vendor.mk)
+### LINEAGE
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-LOCAL_PATH := device/mediatek/mt6580
+LOCAL_PATH := device/doogee/x20
 
 PRODUCT_CHARACTERISTICS := default
+
+PRODUCT_NAME := lineage_x20
+PRODUCT_DEVICE := x20
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -149,11 +158,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
-
+    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
 # Permissions overrides
 PRODUCT_COPY_FILES_OVERRIDES += \
     system/etc/permissions/android.hardware.camera.xml
@@ -262,14 +267,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.media.use-awesome=true
 
 #$(call inherit-product, build/target/product/full.mk)
-
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_mt6580
-PRODUCT_DEVICE := mt6580
-
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
 
 PRODUCT_PACKAGES += \
     librs_jni \
